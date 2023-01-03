@@ -4,15 +4,16 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 #log-el{
+    font-size: 1.8rem;
+    display: block;
     cursor: pointer;
-    width: 20%;
     background-color: #3C79F5;
-    padding: 8px 8px;
-    text-align: center;
-    margin: 200px auto;
+    padding: 10px 40px;
+    margin: 100px auto;
     border-radius: 6px;
     color: #E8F3D6;
     box-shadow: 4px 4px 8px #000;
+    border: none;
 }
 #log-el:hover{
     background-color: #0A2647;
