@@ -1,5 +1,8 @@
 const postHolder = document.getElementById("postHolder")
 const logEl = document.getElementById("log-el")
+
+
+
 const posts = [
     {
         name: "MD TAUFIK",
@@ -77,9 +80,34 @@ function render(){
     </section>`
     }
     postHolder.innerHTML = postHtml
+    setTimeout (function(){
+        modal.style.display = 'none'
+    },500)
 }
 
+const modal = document.getElementById('modal')
+const acceptBtn = document.getElementById('accept-btn')
+const consentForm = document.getElementById('consent-form')
+const modalText = document.getElementById('modal-inner')
 
-logEl.addEventListener("click", function(){
-    render()
+setTimeout(function(){
+    modal.style.display = 'inline'
+},1500)
+
+
+
+
+consentForm.addEventListener('submit', function(event){
+    event.preventDefault(); 
+    
+    const consentFormData = new FormData(consentForm)
+    const name =  consentFormData.get('fullName')
+    
+    
+    modalText.innerHTML = `
+    <h1 id="upload-text">Welcome to the OldaGram Thanks For Login </h1>
+    <h1 class='modal-display-name'>${name}</h1>
+    <button id="log-el" onclick='render(), dispNone()'>Log In</button>
+    `
+   
 })
